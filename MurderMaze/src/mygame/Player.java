@@ -46,12 +46,11 @@ public class Player extends Node {
     armChannel   = animControl.createChannel();
     legChannel   = animControl.createChannel();
     keyList      = new ArrayList();
-    
     bestLevel    = readScore(stateManager);
-    
     model.scale(.3f);
     attachChild(model);
     addControl(phys);
+    model.setMaterial(stateManager.getApplication().getAssetManager().loadMaterial("Materials/Person.j3m"));
     armChannel.addFromRootBone("TopSpine");
     legChannel.addFromRootBone("BottomSpine");
     armChannel.setAnim("ArmIdle");
@@ -59,8 +58,17 @@ public class Player extends Node {
     }
   
   public void saveScore(int newScore, AppStateManager stateManager) {
+    
+    String filePath;
       
-    String filePath         = stateManager.getState(AndroidManager.class).filePath;
+    if("Dalvik".equals(System.getProperty("java.vm.name"))) {
+        filePath = stateManager.getState(AndroidManager.class).filePath;
+    }
+    else {
+        filePath = System.getProperty("user.home")+ "\\";
+
+    }
+    
     BinaryExporter exporter = BinaryExporter.getInstance();
     Node score              = new Node();
     score.setUserData("Name", "Hope");
@@ -87,7 +95,15 @@ public class Player extends Node {
     }
   
   public int readScore(AppStateManager stateManager) {
-     String       filePath     = stateManager.getState(AndroidManager.class).filePath;
+    String filePath;
+      
+    if("Dalvik".equals(System.getProperty("java.vm.name"))) {
+        filePath = stateManager.getState(AndroidManager.class).filePath;
+    }
+    else {
+        filePath = System.getProperty("user.home")+ "\\";
+
+    }
      AssetManager assetManager = stateManager.getApplication().getAssetManager();
      
      assetManager.registerLocator(filePath, FileLocator.class);
