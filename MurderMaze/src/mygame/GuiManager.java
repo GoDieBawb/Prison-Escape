@@ -45,10 +45,10 @@ public class GuiManager extends AbstractAppState {
   private ArrayList<ButtonAdapter> buttonList;
   private Player                   player;
   private TextElement              title;
-  private Joystick                 stick;
+  private MyJoystick               stick;
   private BitmapFont               font;
   private boolean                  isAndroid;
-  private Geometry                  bg;
+  private Geometry                 bg;
   
   @Override
   public void initialize(AppStateManager stateManager, Application app){
@@ -60,8 +60,8 @@ public class GuiManager extends AbstractAppState {
     screen            = new Screen(app, "tonegod/gui/style/atlasdef/style_map.gui.xml");
     font              = assetManager.loadFont("Interface/Impact.fnt");
     screen.setUseTextureAtlas(true,"tonegod/gui/style/atlasdef/atlas.png");
-    screen.setUseMultiTouch(true);
     this.app.getGuiNode().addControl(screen);
+    screen.setUseMultiTouch(true);
     this.app.getInputManager().setSimulateMouse(true);
     stage      = 1;
     buttonList = new ArrayList();
@@ -172,7 +172,8 @@ public class GuiManager extends AbstractAppState {
     }
   
   private void initJoystick(){
-    stick = new Joystick(screen, Vector2f.ZERO, (int)(screen.getWidth()/6)) {
+      
+    stick = new MyJoystick(screen, Vector2f.ZERO, (int)(screen.getWidth()/6)) {
     
     @Override
     public void onUpdate(float tpf, float deltaX, float deltaY) {

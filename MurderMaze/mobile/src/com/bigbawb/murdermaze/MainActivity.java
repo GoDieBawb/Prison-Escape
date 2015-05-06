@@ -47,7 +47,8 @@ public class MainActivity extends AndroidHarness {
 	
 
     @Override
-    public void onCreate(Bundle state) {   
+    public void onCreate(Bundle state) { 
+        
       super.onCreate(state);
       
       if (app != null) {
@@ -79,6 +80,13 @@ public class MainActivity extends AndroidHarness {
       
       }
       
+    }
+    
+    @Override
+    public void onDestroy() {
+      super.onDestroy();
+      System.runFinalization();
+      android.os.Process.killProcess(android.os.Process.myPid());
     }
 
   }

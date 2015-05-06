@@ -42,7 +42,7 @@ public class CameraManager extends AbstractAppState {
         cam.setDefaultDistance(.5f);
         cam.setDragToRotate(false);
         cam.setDownRotateOnCloseViewOnly(false);
-        cam.setRotationSpeed(2f);
+        cam.setRotationSpeed(4f);
         cam.setLookAtOffset(player.getLocalTranslation().add(0, 1.25f, 0));
         cam.setDefaultVerticalRotation(3f);
         cam.setMaxVerticalRotation(4f);
