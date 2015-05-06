@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Bawb\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes.dex : \
 C:\Users\Bawb\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\BuildConfig.class \
 C:\Users\Bawb\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\MainActivity.class \
@@ -26,3 +27,33 @@ C:\Users\Bawb\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME
 C:\Users\Bawb\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\xmlpull-xpp3-ff25c7b8be9926d2263751b97053ab21.jar \
 C:\Users\Bawb\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-networking-313f114a50fd627698cd5fcab7129d5e.jar \
 C:\Users\Bawb\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\nifty-5a5489a51b82076928a6b6a100d0ac83.jar \
+=======
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes.dex : \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\BuildConfig.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\MainActivity.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\R$attr.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\R$drawable.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\R$integer.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\R$layout.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\R$string.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\classes\com\bigbawb\murdermaze\R.class \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-jogg-4a5e00305c011586f832d004fc98f3fb.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-android-9ec59edebe1b41109b23409cdbf2d80c.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-plugins-03de72cc2650ea5a62d165e0c159fd9c.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\nifty-default-controls-ad8361cf8aaa3fcd59cc3c91f07a978e.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-niftygui-04afe678e18612f0e49704182f25cc7c.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-core-d5b4209967341d4d3499d2887a999086.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\google-play-services-99401b8d281da6c6e568e69ed6eb278c.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\tonegod.gui-42cf3882da65ce3edfbb4ae83dc749fc.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\MyGame-b35b0bd9427deae18b04bbde426044aa.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\j-ogg-vorbisd-7a7370fce84c16b66f01f32f4fffef6a.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\nifty-style-black-3e03ffcb8788fa7a3cc913cdc9992d75.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\j-ogg-oggd-79a6454c06e9ccb11f6ce421a6f4d012.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\eventbus-d1246d36fd64ade61e454fe00d191db9.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-bullet-e70d467b9c48849369733a39c3dad034.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-terrain-550e90b7cf927648f4c28f5279410b1a.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-effects-d4aab464fbad22aab311036fb4aa4d68.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\xmlpull-xpp3-53c55e5136e22de2805a52308f891c24.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\jME3-networking-0506c1a3ece4267127280abada1ebd4d.jar \
+C:\Users\Bob\Documents\GitHub\Prison-Escape\MurderMaze\mobile\bin\dexedLibs\nifty-d11125236dbc9b79d2c80e776af55c81.jar \
+>>>>>>> 58b9ff515b5560719c990b6c28e6683c2315e00c
