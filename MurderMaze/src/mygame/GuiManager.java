@@ -265,7 +265,7 @@ public class GuiManager extends AbstractAppState {
     app.getCamera().lookAtDirection(new Vector3f(0.0f, 0.0f, -1.0f), new Vector3f(0,1,0));
     
     if (isAndroid)
-    stick.hide();
+        stick.hide();
       
     }
   }

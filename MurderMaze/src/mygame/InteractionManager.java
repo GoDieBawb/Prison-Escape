@@ -71,12 +71,12 @@ public class InteractionManager extends AbstractAppState implements ActionListen
       
       if (isPressed){
       inputManager.setCursorVisible(true);
-      stateManager.getState(CameraManager.class).cam.setDragToRotate(true);
+      //stateManager.getState(CameraManager.class).cam.setDragToRotate(true);
       }
       
       else {
       inputManager.setCursorVisible(false);
-      stateManager.getState(CameraManager.class).cam.setDragToRotate(false);
+      //stateManager.getState(CameraManager.class).cam.setDragToRotate(false);
       }
       
     }

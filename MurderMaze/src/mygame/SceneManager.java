@@ -44,32 +44,32 @@ public class SceneManager extends AbstractAppState {
     player              = stateManager.getState(PlayerManager.class).player;
     interactableManager = stateManager.getState(InteractableManager.class);
     scene               = new Node();
-    }
+  }
   
   public void initScene(String scenePath){
     
-    app.getRootNode().attachChild(player);
     player.keyList.clear();
 
-    rootNode.detachChild(scene);
-
     scene = (Node) assetManager.loadModel(scenePath);
-
-    Vector3f startSpot = scene.getChild("StartSpot").getLocalTranslation();
-    player.setLocalTranslation(startSpot);
     
     rootNode.attachChild(scene);
-    
     interactableManager.initInteractables(scene);
     
+    Vector3f startSpot = scene.getChild("StartSpot").getLocalTranslation();
+    app.getRootNode().attachChild(player);
+    player.setLocalTranslation(startSpot);
+    
+    app.getStateManager().getState(CameraManager.class).initCamera();
+    app.getStateManager().getState(CameraManager.class).setEnabled(true);
     makeUnshaded(app.getRootNode());
     
     }
   
   public void removeScene(){
+    app.getStateManager().getState(CameraManager.class).setEnabled(false);
     rootNode.detachAllChildren();
     scene = new Node();
-    }
+  }
 
     public Node makeUnshaded(Node node) {
       

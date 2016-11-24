@@ -33,15 +33,25 @@ public class CameraManager extends AbstractAppState {
     this.stateManager = this.app.getStateManager();
     this.assetManager = this.app.getAssetManager();
     player = this.stateManager.getState(PlayerManager.class).player;
-    cameraNode = new Node();
-    this.app.getRootNode().attachChild(cameraNode);
-    initCamera();
-    }
+    setFrustrum();
+    setEnabled(false);  
+  }
+  
+  private void setFrustrum() {
+        float scale = .5f;
+        app.getCamera().setFrustumNear(app.getCamera().getFrustumNear()*scale);
+        app.getCamera().setFrustumLeft(app.getCamera().getFrustumLeft()*scale);
+        app.getCamera().setFrustumRight(app.getCamera().getFrustumRight()*scale);
+        app.getCamera().setFrustumTop(app.getCamera().getFrustumTop()*scale);
+        app.getCamera().setFrustumBottom(app.getCamera().getFrustumBottom()*scale);
+  }
   
   //Creates camera
   public void initCamera() {
       
-        cam = new ChaseCamera(this.app.getCamera(), cameraNode, this.app.getInputManager());
+        cameraNode = new Node();
+        this.app.getRootNode().attachChild(cameraNode);
+        cam = new ChaseCamera(this.app.getCamera(), cameraNode, app.getInputManager());
         cam.setMinDistance(0.5f);
         cam.setMaxDistance(.5f);
         cam.setDefaultDistance(.5f);
@@ -53,12 +63,6 @@ public class CameraManager extends AbstractAppState {
         cam.setMaxVerticalRotation(4f);
         cam.setMinVerticalRotation(2f);
         app.getInputManager().setCursorVisible(false);
-        float scale = .5f;
-        app.getCamera().setFrustumNear(app.getCamera().getFrustumNear()*scale);
-        app.getCamera().setFrustumLeft(app.getCamera().getFrustumLeft()*scale);
-        app.getCamera().setFrustumRight(app.getCamera().getFrustumRight()*scale);
-        app.getCamera().setFrustumTop(app.getCamera().getFrustumTop()*scale);
-        app.getCamera().setFrustumBottom(app.getCamera().getFrustumBottom()*scale);
         
   }
   

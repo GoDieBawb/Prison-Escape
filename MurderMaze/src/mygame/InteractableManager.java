@@ -70,7 +70,7 @@ public class InteractableManager extends AbstractAppState {
         else if (currentInteractable.getName().equals("FinishSpot")) {
           
           finishSpot = new FinishSpot(stateManager, currentInteractable);
-          finishSpot.setLocalTranslation(currentInteractable.getLocalTranslation());
+          //finishSpot.setLocalTranslation(currentInteractable.getLocalTranslation());
           interactableNode.attachChild(finishSpot);
             
           }
