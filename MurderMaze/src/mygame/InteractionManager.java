@@ -16,6 +16,7 @@ import com.jme3.input.controls.ActionListener;
 import com.jme3.input.controls.KeyTrigger;
 import com.jme3.input.controls.MouseButtonTrigger;
 import com.jme3.math.Vector3f;
+import com.jme3.scene.Node;
 
 /**
  *
@@ -29,8 +30,8 @@ public class InteractionManager extends AbstractAppState implements ActionListen
   private InputManager inputManager;
   private Player player;
   private Vector3f walkDirection = new Vector3f();
-  private Vector3f camDir = new Vector3f();
-  private Vector3f camLeft = new Vector3f();
+  private Vector3f camDir        = new Vector3f();
+  private Vector3f camLeft       = new Vector3f();
   public boolean inv = false, left = false, right = false, up = false, down = false, click = false;
   
   @Override
@@ -62,10 +63,12 @@ public class InteractionManager extends AbstractAppState implements ActionListen
     inputManager.addListener(this, "Space");
     }
 
+  @Override
   public void onAction(String binding, boolean isPressed, float tpf) {
     
     if (binding.equals("Inventory")) {
       inv = isPressed;
+      
       if (isPressed){
       inputManager.setCursorVisible(true);
       stateManager.getState(CameraManager.class).cam.setDragToRotate(true);
@@ -108,9 +111,10 @@ public class InteractionManager extends AbstractAppState implements ActionListen
   }
   
   @Override
-  public void update(float tpf){
-        camDir.set(this.app.getCamera().getDirection()).multLocal(10.0f, 0.0f, 10.0f);
-        camLeft.set(this.app.getCamera().getLeft()).multLocal(10.0f);
+  public void update(float tpf) {
+      
+        camDir.set(this.app.getCamera().getDirection().multLocal(1,0,1));
+        camLeft.set(this.app.getCamera().getLeft()).multLocal(1,0,1);
         walkDirection.set(0, 0, 0);
         
         
@@ -136,8 +140,13 @@ public class InteractionManager extends AbstractAppState implements ActionListen
             player.idle();
         }
         
-       player.phys.setWalkDirection(walkDirection.mult(tpf).mult(40));
-       player.phys.setViewDirection(camDir);
+       Node scene = app.getStateManager().getState(SceneManager.class).scene;
+       
+       if (player.moveCheck(walkDirection, scene)) {
+           player.move(walkDirection.mult(6).mult(tpf));
+       }
+       
+       player.lookAt(camDir.multLocal(500,0,500), new Vector3f(0,1,0));
 
     }
   

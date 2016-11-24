@@ -10,6 +10,7 @@ import com.jme3.app.state.AbstractAppState;
 import com.jme3.app.state.AppStateManager;
 import com.jme3.asset.AssetManager;
 import com.jme3.collision.CollisionResults;
+import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 
 /**
@@ -69,6 +70,7 @@ public class InteractableManager extends AbstractAppState {
         else if (currentInteractable.getName().equals("FinishSpot")) {
           
           finishSpot = new FinishSpot(stateManager, currentInteractable);
+          finishSpot.setLocalTranslation(currentInteractable.getLocalTranslation());
           interactableNode.attachChild(finishSpot);
             
           }
@@ -100,9 +102,18 @@ public class InteractableManager extends AbstractAppState {
     
     
     for (int i = 0; i < interactableNode.getQuantity(); i++) {
+        
       Interactable bla = (Interactable) interactableNode.getChild(i);
       bla.attachChild(bla.model);
+      
+      if (bla.equals(finishSpot)) {
+          continue;
       }
+      
+      bla.setLocalTranslation(bla.model.getLocalTranslation());
+      bla.model.setLocalTranslation(0,0,0);
+      
+    }
     
     
       
@@ -115,31 +126,18 @@ public class InteractableManager extends AbstractAppState {
    
     if (distance < 2f) {
       finishSpot.act();
-      }
+    }
       
-    CollisionResults results = new CollisionResults();
-    interactableNode.collideWith(player.model.getWorldBound(), results);
-      
-    //Checks if an interactable is hit
-    if (results.size() != 0){
-      
-      Interactable hitInteractable;
-      
-      try {
-          
-      hitInteractable = (Interactable) results.getCollision(0).getGeometry().getParent().getParent().getParent().getParent().getParent();
-      
-      }
-      
-      catch(ClassCastException e){
-      
-      hitInteractable = (Interactable) results.getCollision(0).getGeometry().getParent().getParent().getParent().getParent();
-          
-      }
-      
-      hitInteractable.act();
-      
-      }
+    for (int i = 0; i < interactableNode.getChildren().size(); i++) {
+    
+        Interactable interactable = (Interactable) interactableNode.getChild(i);
+        float dist = player.getLocalTranslation().distance(interactable.getLocalTranslation());
+        
+        if (dist < 1.5f) {
+            interactable.act();
+        }
+        
+    }
       
     }
   

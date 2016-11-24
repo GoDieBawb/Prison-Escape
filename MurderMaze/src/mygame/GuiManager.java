@@ -61,13 +61,15 @@ public class GuiManager extends AbstractAppState {
     font              = assetManager.loadFont("Interface/Impact.fnt");
     screen.setUseTextureAtlas(true,"tonegod/gui/style/atlasdef/atlas.png");
     this.app.getGuiNode().addControl(screen);
-    screen.setUseMultiTouch(true);
     this.app.getInputManager().setSimulateMouse(true);
     stage      = 1;
     buttonList = new ArrayList();
     isAndroid  = "Dalvik".equals(System.getProperty("java.vm.name"));
-    if (isAndroid)
-    initJoystick();
+    
+    if (isAndroid) {
+        initJoystick();
+        //screen.setUseMultiTouch(true);
+    }
     
     initBackground();
     initTitle();
@@ -76,7 +78,6 @@ public class GuiManager extends AbstractAppState {
     }
   
   private void initBackground() {
-    System.out.println(app.getCamera().getDirection());
     Box b = new Box(6,6,6);  
     bg    = new Geometry("Background", b);
     b.scaleTextureCoordinates(new Vector2f(2,2));

@@ -10,6 +10,8 @@ import com.jme3.app.state.AbstractAppState;
 import com.jme3.app.state.AppStateManager;
 import com.jme3.asset.AssetManager;
 import com.jme3.input.ChaseCamera;
+import com.jme3.math.Vector3f;
+import com.jme3.scene.Node;
 
 /**
 *
@@ -22,6 +24,7 @@ public class CameraManager extends AbstractAppState {
   private AssetManager assetManager;
   public ChaseCamera cam;
   private Player player;
+  private Node   cameraNode;
   
   @Override
   public void initialize(AppStateManager stateManager, Application app){
@@ -30,20 +33,22 @@ public class CameraManager extends AbstractAppState {
     this.stateManager = this.app.getStateManager();
     this.assetManager = this.app.getAssetManager();
     player = this.stateManager.getState(PlayerManager.class).player;
+    cameraNode = new Node();
+    this.app.getRootNode().attachChild(cameraNode);
     initCamera();
     }
   
   //Creates camera
   public void initCamera() {
       
-        cam = new ChaseCamera(this.app.getCamera(), player, this.app.getInputManager());
+        cam = new ChaseCamera(this.app.getCamera(), cameraNode, this.app.getInputManager());
         cam.setMinDistance(0.5f);
         cam.setMaxDistance(.5f);
         cam.setDefaultDistance(.5f);
         cam.setDragToRotate(false);
         cam.setDownRotateOnCloseViewOnly(false);
         cam.setRotationSpeed(4f);
-        cam.setLookAtOffset(player.getLocalTranslation().add(0, 1.25f, 0));
+        //cam.setLookAtOffset(player.getLocalTranslation().add(0, 1.35f, 0));
         cam.setDefaultVerticalRotation(3f);
         cam.setMaxVerticalRotation(4f);
         cam.setMinVerticalRotation(2f);
@@ -61,6 +66,8 @@ public class CameraManager extends AbstractAppState {
   public void update(float tpf) {
     cam.setDefaultDistance(.6f);
     cam.setDefaultVerticalRotation(.145f);
+    cameraNode.setLocalTranslation(player.getLocalTranslation().multLocal(1,0,1).add(0, 1.35f, 0));
+    cameraNode.move(app.getCamera().getDirection().normalize().mult(.4f));
   }
   
 }

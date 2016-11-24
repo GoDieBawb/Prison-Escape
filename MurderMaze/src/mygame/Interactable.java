@@ -30,7 +30,7 @@ public abstract class Interactable extends Node {
   public void act() {
       
     removeFromParent();
-    stateManager.getState(SceneManager.class).addPhys();
+    //stateManager.getState(SceneManager.class).addPhys();
     
     }  
     
